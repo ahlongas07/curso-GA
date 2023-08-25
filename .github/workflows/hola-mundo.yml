@@ -9,7 +9,7 @@ jobs:
         id: cp
         uses: actions/checkout@v3
       - name: Install Python3
-        id: IP3
+        id: ip3
         uses: actions/setup-python@v4
         with: 
           python-version: '3.10'
