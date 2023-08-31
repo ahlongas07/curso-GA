@@ -1,0 +1,31 @@
+name: hola-mundo-triggers
+run-name: ¡Estoy aprendiendo los Triggers de GitHub Actions!
+on:
+    schedule:
+        - cron:  
+            "0 5 * * *"
+    push:
+        branches:
+        - 'aprendiendo-github-actions'
+    issues:
+        types: 
+            [opened, edited, closed]
+        
+jobs:
+    hola-mundo:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Copy Repo
+          id: cp
+          uses: actions/checkout@v3
+        - name: Install Python3
+          id: ip3
+          uses: actions/setup-python@v4
+          with: 
+            python-version: '3.10'
+        - name: Definir Usuario
+          id: du
+          run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV    
+        - name: Hola Mundo from Python3
+          id: hmfp3
+          run: python3 holamundo.py
