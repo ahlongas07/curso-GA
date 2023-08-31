@@ -6,11 +6,16 @@ on:
             "0 5 * * *"
     push:
         branches:
-        - 'aprendiendo-github-actions'
+            - 'aprendiendo-github-actions'
     issues:
         types: 
             [opened, edited, closed]
-        
+    workflow_dispatch:
+        inputs:
+            name:
+                description: "Who are you?"
+                default: "Poncho Zuleta"
+                
 jobs:
     hola-mundo:
       runs-on: ubuntu-latest
