@@ -7,9 +7,7 @@ on:
     push:
         branches:
             - 'aprendiendo-github-actions'
-    issues:
-        types: 
-            [opened, edited, closed]
+            
     workflow_dispatch:
         inputs:
             name:
