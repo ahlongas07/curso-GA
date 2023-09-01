@@ -30,7 +30,7 @@ on:
                   - ElTercero
                 
 jobs:
-    hola-mundo:
+    hola-mundo-manual:
       runs-on: ubuntu-latest
       steps:
         - name: Copy Repo
