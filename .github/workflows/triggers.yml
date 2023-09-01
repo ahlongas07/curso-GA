@@ -10,9 +10,24 @@ on:
             
     workflow_dispatch:
         inputs:
-            name:
-                description: "Who are you?"
+            lenguaje_favorito:
+                description: 'Lenguaje Favorito'
+                default: Python
+                type: choice
+                options:
+                  - Python
+                  - JavaScript
+                  - Go
+
+            nombre:
+                description: 'Quien es?'
                 default: "Poncho Zuleta"
+                required: true
+                type: choice
+                options:
+                  - ElPrimero
+                  - ElSegundo
+                  - ElTercero
                 
 jobs:
     hola-mundo:
