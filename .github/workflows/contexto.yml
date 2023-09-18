@@ -1,0 +1,21 @@
+name: Contextos
+run-name: ¡Estoy aprendiendo a usar el Contexto de GitHub Actions!
+on: [push, pull_request]
+env:
+    var1: Yo
+    var2: Estoy
+    var3: Aprendiendo
+    var4: GitHub 
+    var5: Actions
+jobs:
+    contexto:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Vars
+              run: echo ${{ env.var1 }} ${{ env.var2 }} ${{ env.var3 }} ${{ env.var4 }} ${{ env.var5 }}
+    contexto-GHA:
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print GA Vars
+              run: echo "Corriendo desde el Push"
